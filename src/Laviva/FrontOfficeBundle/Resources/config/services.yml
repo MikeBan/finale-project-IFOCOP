@@ -1,0 +1,4 @@
+services:
+#    laviva_front_office.example:
+#        class: Laviva\FrontOfficeBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

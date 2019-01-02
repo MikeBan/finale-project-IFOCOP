@@ -1,0 +1,74 @@
+{% extends 'back-office.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block fos_user_content %}
+<form action="{{ path('fos_user_registration_register') }}" method="POST" class="form-horizontal" role="form">
+    {{form_errors(form)}}
+     
+     
+    <fieldset>
+        <legend>Enregistrement d'un utilisateur</legend><br>
+
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+            <label class="custom-control-label" for="customRadioInline1">Male</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadioInline2">Female</label>
+        </div>
+
+        <div class="form-group">
+            <label for="username" class="col-md-2 control_label">Login :</label>
+            <div class="col-md-3">
+                <input class="form-control" type="text" id="username" name="fos_user_registration_form[username]" required="required" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="firstname" class="col-md-2 control_label">firstname :</label>
+            <div class="col-md-3">
+                <input class="form-control" type="text" id="firstname" name="fos_user_registration_form[firstname]" required="required" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname" class="col-md-2 control_label">lastname :</label>
+            <div class="col-md-3">
+                <input class="form-control" type="text" id="lastname" name="fos_user_registration_form[lastname]" required="required" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-md-2 control_label">Email :</label>
+            <div class="col-md-3">
+                <input class="form-control" type="email" id="email" name="fos_user_registration_form[email]" required="required" />
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="address" class="col-md-2 control_label">adresse:</label>
+                <div class="col-md-3">
+                    <input class="form-control" type="text" id="address" name="fos_user_registration_form[address]" required="required" />
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="plainPassword_first" class="col-md-2 control_label">Mot de passe :</label>
+            <div class="col-md-3">
+                <input class="form-control" type="password" id="plainPassword_first" name="fos_user_registration_form[plainPassword][first]" value="Hedwige_45Hp" required="required" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="plainPassword_second" class="col-md-2 control_label">Confirmation du mot de passe :</label>
+            <div class="col-md-3">
+                <input class="form-control" type="password" id="plainPassword_second" name="fos_user_registration_form[plainPassword][second]" value="Hedwige_45Hp" required="required" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-primary">Valider <span class="glyphicon glyphicon-ok"></span></button>
+            </div>
+        </div>
+    </fieldset>
+     
+    {{ form_widget(form._token) }}
+</form>
+
+{% endblock fos_user_content %}

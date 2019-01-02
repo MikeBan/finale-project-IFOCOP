@@ -1,0 +1,8 @@
+laviva_back_office_product:
+    resource: "@LavivaBackOfficeBundle/Resources/config/routing/product.yml"
+    prefix:   /product
+
+back_office_admin:
+    path:     /admin/
+    defaults: { _controller: LavivaBackOfficeBundle:Security:AdminPage }
+

@@ -1,0 +1,3 @@
+laviva_main_homepage:
+    path:     /
+    defaults: { _controller: LavivaMainBundle:Default:index }

@@ -1,0 +1,12 @@
+product_index:
+    path:     /
+    defaults: { _controller: "LavivaBackOfficeBundle:product:index" }
+    methods:  GET
+
+product_show:
+    path:     /{id}/show
+    defaults: { _controller: "LavivaBackOfficeBundle:product:show" }
+    methods:  GET
+
+
+

@@ -30,7 +30,7 @@ class productController extends Controller
 
         $products = $em->getRepository('LavivaBackOfficeBundle:product')->findAll();
 
-        return $this->render('product/index.html.twig', array(
+        return $this->render('@LavivaBackOffice/product/index.html.twig', array(
             'products' => $products,
         ));
     }
@@ -53,7 +53,7 @@ class productController extends Controller
             $file = $product->getPhoto();
             if ($file instanceof UploadedFile) { 
             $fileName = md5(uniqid()).'.'.$file->guessExtension();
-            $file->move($this->getParameter('images_directory'), $fileName);
+            $file->move($this->getParameter('images_products_directory'), $fileName);
             }
             $product->setPhoto($fileName);
             $em = $this->getDoctrine()->getManager();
@@ -63,7 +63,7 @@ class productController extends Controller
             return $this->redirectToRoute('admin_product_show', array('id' => $product->getId()));
         }
 
-        return $this->render('product/new.html.twig', array(
+        return $this->render('@LavivaBackOffice/product/new.html.twig', array(
             'product' => $product,
             'form' => $form->createView(),
         ));
@@ -79,7 +79,7 @@ class productController extends Controller
     {
         $deleteForm = $this->createDeleteForm($product);
 
-        return $this->render('product/show.html.twig', array(
+        return $this->render('@LavivaBackOffice/product/show.html.twig', array(
             'product' => $product,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -103,7 +103,7 @@ class productController extends Controller
             return $this->redirectToRoute('admin_product_edit', array('id' => $product->getId()));
         }
 
-        return $this->render('product/edit.html.twig', array(
+        return $this->render('@LavivaBackOffice/product/edit.html.twig', array(
             'product' => $product,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

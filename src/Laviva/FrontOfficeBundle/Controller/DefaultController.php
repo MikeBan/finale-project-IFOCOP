@@ -2,17 +2,13 @@
 
 namespace Laviva\FrontOfficeBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function ShoppingAction(request $request)
     {
-        return $this->render('LavivaFrontOfficeBundle:Default:index.html.twig');
-    }
-
-    public function UserProfileAction()
-    {
-        return $this->render('@FOSUser/Profile/show.html.twig');
+        return $this->render('@LavivaFrontOffice/ShoppingCard/ShoppingCard.html.twig');
     }
 }

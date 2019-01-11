@@ -49,7 +49,7 @@ class product
      *
      * @ORM\Column(name="photo", type="string", length=255)
      * 
-     * @Assert\NotBlank(message="Please, upload the product brochure as a PDF file.")
+     * @Assert\NotBlank(message="Please, upload a picture.")
      * @Assert\File(
      *      maxSize = "2048k",
      *      mimeTypes={ "image/png", "image/jpg", "image/jpeg"}

@@ -1,9 +1,27 @@
-{% extends 'base.html.twig' %}
+{% extends 'back-office.html.twig' %}
 
-{% block body %}
+{% block content %}
 
 
-    <h1>Products list</h1>
+<p>Products list</p>
+
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="info-box blue-bg">
+            <div class="title">Customer</div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="info-box brown-bg">
+            <div class="title">Order</div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="info-box dark-bg">
+            <div class="title">Stock</div>
+        </div>
+    </div>
+</div>
 
     <ul>
         <li>
@@ -11,9 +29,9 @@
         </li>
     </ul>
 
-    <table>
+    <table id="dtBasicExample" class="container table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
-            <tr>
+          <tr>
                 <th>Id</th>
                 <th>Idcategory</th>
                 <th>Name</th>
@@ -32,7 +50,7 @@
                 <td>{{ product.idCategory }}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
-                <td><br> <a href="{{ asset('uploads/images/' ~ product.photo ) }}" style="width:200px height:200px ">voir photo</a></td>
+                <td><br> <img src="{{ asset('uploads/images products/' ~ product.photo ) }}" class="" alt="Responsive image"><a href="{{ asset('uploads/images products/' ~ product.photo ) }}" style="width:200px; height: 200px ">voir photo</a></td>
                 <td>{{ product.color }}</td>
                 <td>{{ product.price }}</td>
                 <td>{{ product.quantity }}</td>

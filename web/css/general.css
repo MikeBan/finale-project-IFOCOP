@@ -1,0 +1,54 @@
+/*GENERAL*/
+*
+{
+    font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.bandeau
+{
+    width: 100vw;
+    position: absolute;
+    left: calc(-1 *(100vw - 100% ) /2);
+}
+
+.bar-navigation
+{
+    margin-top: 50px;
+}
+
+.mid-header
+{
+    margin-top: 120px;
+}
+
+a {
+    color: #777;
+    padding: 0 0.75rem;
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #777;
+}
+
+.foot-base
+{
+    background: grey;
+}
+
+h6 a 
+{
+    color: white;
+    font-weight: bold;
+}
+
+
+/*FOOTER*/
+footer div a{
+    color: white;
+}
+

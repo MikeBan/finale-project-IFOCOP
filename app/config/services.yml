@@ -35,5 +35,6 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
 
-parameters:
-    
+    Laviva\BackOfficeBundle\Service\FileUploader:
+        arguments:
+            $targetDirectory: '%images_products_directory%'

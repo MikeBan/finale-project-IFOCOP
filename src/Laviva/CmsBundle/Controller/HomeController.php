@@ -24,4 +24,24 @@ class HomeController extends Controller
             'products' => $products,
         ));
     }
+
+    public function aboutAction()
+    {
+        return $this->render('@LavivaCms/Homepage/about.html.twig');
+    }
+
+    public function cgvAction()
+    {
+        return $this->render('@LavivaCms/Homepage/CGV.html.twig');
+    }
+
+    public function contactAction()
+    {
+        return $this->render('@LavivaCms/Homepage/contact.html.twig');
+    }
+    
+    public function sitemapAction()
+    {
+        return $this->render('@LavivaCms/Homepage/sitemap.html.twig');
+    }
 }

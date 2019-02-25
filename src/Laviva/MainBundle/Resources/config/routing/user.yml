@@ -1,0 +1,12 @@
+admin_user_index:
+    path:     /
+    defaults: { _controller: "LavivaMainBundle:User:index" }
+    methods:  GET
+
+admin_user_show:
+    path:     /{id}/show
+    defaults: { _controller: "LavivaMainBundle:User:show" }
+    methods:  GET
+
+
+

@@ -1,12 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin-base.html.twig' %}
 
 {% block body %}
+<div class="col-lg-4">
     <h1>Product edit</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+
+        <input type="submit" value="Edit" class="btn btn-success mt-4" />
     {{ form_end(edit_form) }}
+</div>
 
     <ul>
         <li>
@@ -14,7 +17,7 @@
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Delete" >
             {{ form_end(delete_form) }}
         </li>
     </ul>

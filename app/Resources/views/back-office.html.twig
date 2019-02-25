@@ -16,17 +16,18 @@
     <!--CSS-->
     <link rel="stylesheet" href="{{ asset('css/general.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/sb-admin.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/admin-default.css') }}" />
 
     <title>{% block title %}Back-Office{% endblock %}</title>
 </head>
 
 <body>
 
-{% block header %}
 <div class="container">
+{% block header %}
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     
-        <a class="navbar-brand" href="{{ '/' }}">REMMY</a>
+        <a class="navbar-brand" href="{{ path('homepage') }}">REMMY</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -46,10 +47,10 @@
                         
             </form>
         </div>
-{% endblock %}
-
 </nav>
+{% endblock %}
 <!---END NAV-->
+
 
 {% block flash %}
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
@@ -66,6 +67,7 @@
         {% endfor %}
     {% endif %}
 {% endblock %}
+</div>
 
 
     <!-- container content - BEGIN -->
@@ -79,6 +81,7 @@
  
 
     <!-- container content - END -->
+    {% block footer %}{% endblock footer %}
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -90,10 +93,7 @@
 
 
 
-    {% block footer %}{% endblock footer %}
 
-
-</div>
 
 </body>
 </html>

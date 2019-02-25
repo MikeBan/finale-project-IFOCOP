@@ -2,3 +2,19 @@ homepage:
     path:     /
     defaults: { _controller: LavivaCmsBundle:Home:index }
     methods:  GET
+
+aboutPage:
+    path:     /about
+    defaults: { _controller: LavivaCmsBundle:Home:about }
+
+cgvPage:
+    path:     /cgv
+    defaults: { _controller: LavivaCmsBundle:Home:cgv }
+
+contactPage:
+    path:     /contact
+    defaults: { _controller: LavivaCmsBundle:Home:contact }
+
+sitemapPage:
+    path:     /sitemap
+    defaults: { _controller: LavivaCmsBundle:Home:sitemap }

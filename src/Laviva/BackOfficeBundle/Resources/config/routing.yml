@@ -1,6 +1,6 @@
 laviva_back_office_product:
     resource: "@LavivaBackOfficeBundle/Resources/config/routing/product.yml"
-    prefix:   /product
+    prefix:   admin/product
 
 back_office_admin:
     path:     /admin/

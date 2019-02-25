@@ -40,12 +40,30 @@ a:hover{
     background: grey;
 }
 
+.foot-bandeau
+{
+    position: absolute;
+    width: 100vw;
+    left: calc(-1 *(100vw - 100% ) /2);
+    z-index: 0;
+}
+
+.payment
+{
+    position: relative;
+    z-index: 1;
+}
+
 h6 a 
 {
     color: white;
     font-weight: bold;
 }
 
+.footer-copyright 
+{
+    margin-top: 70px;
+}
 
 /*FOOTER*/
 footer div a{

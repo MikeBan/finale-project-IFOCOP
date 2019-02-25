@@ -1,3 +1,7 @@
+laviva_main_admin_user:
+    resource: "@LavivaMainBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/user/
+
 laviva_main_homepage:
-    path:     /
+    path:     /admin
     defaults: { _controller: LavivaMainBundle:Default:index }

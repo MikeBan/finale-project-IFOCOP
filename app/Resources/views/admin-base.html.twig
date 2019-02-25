@@ -1,0 +1,71 @@
+{% extends 'back-office.html.twig' %}
+
+
+{% block content %}
+
+<p>PAGE ADMIN</p><br><br><br>
+
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+            <div class="side-navbar-wrapper">
+              <!-- Sidebar Header    -->
+              <div class="sidenav-header d-flex align-items-center justify-content-center">
+                <!-- User Info-->
+                <div class="sidenav-header-inner text-center"><img src="img/avatar-7.jpg" alt="person" class="img-fluid rounded-circle">
+                  <h2 class="h5">Nathan Andrews</h2><span>Web Developer</span>
+                </div>
+                <!-- Small Brand information, appears on minimized sidebar-->
+                <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
+              </div>
+              <!-- Sidebar Navigation Menus-->
+              <div class="main-menu">
+                <h5 class="sidenav-heading"><a class="navbar-brand" href="{{ path('homepage') }}">DASHBOARD</a></h5><hr>
+                <h5 class="sidenav-heading">User <div class="badge badge-warning">6 New</div></h5>
+                <ul id="side-main-menu" class="side-menu list-unstyled">
+                  <li><a href="{{ path('admin_user_index') }}">All</a></li>
+                </ul>
+              </div>
+              <div class="admin-menu">
+                <h5 class="sidenav-heading">PRODUCT</h5>
+                <ul id="side-admin-menu" class="side-menu list-unstyled"> 
+                  <li> <a href="{{ path('admin_product_index') }}"> <i class="icon-screen"> </i>All</a></li>
+                  <li> <a href="#">CATEGORY</a></li>
+                  <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"><i class="icon-interface-windows"></i>Liste <div class="badge badge-info">Item</div></a>
+                    <ul id="exampledropdownDropdown" class="collapse">
+                      <li><a href="#">Page</a></li>
+                      <li><a href="#">Page</a></li>
+                      <li><a href="#">Page</a></li>
+                    </ul>
+                  </li>
+                  <li> <a href="#"> <i class="icon-flask"> </i>Product</a></li>
+                </ul>
+              </div>  
+            </div>
+          </nav>
+          
+<div class="page">
+    
+<!-- navbar-->
+<header class="header">
+    <nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-holder d-flex align-items-center justify-content-between">
+        <div class="navbar-header"><a href="{{ path('back_office_admin') }}"  class="navbar-brand">
+            <div class="brand-text d-none d-md-inline-block"><strong class="text-info">REMMY BACK OFFICE</strong></div></a></div>
+        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+            <li class="nav-item"></li>
+            
+            <!-- return home page    -->
+            <li class="nav-item"><a href="{{ path('homepage') }}" class="nav-link logout"> <span class="d-none d-sm-inline-block">Home page</span><i class="fa fa-sign-out"></i></a></li>
+            <!-- Log out-->
+            <li class="nav-item"><a href="{{ path('fos_user_security_logout') }}" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+</header>
+
+{% block body %}   {% endblock %}
+
+</div>
+{% endblock %}

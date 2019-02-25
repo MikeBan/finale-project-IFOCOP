@@ -3,26 +3,23 @@
 namespace Laviva\BackOfficeBundle\Controller;
 
 use Laviva\BackOfficeBundle\Entity\product;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Request;
+use Laviva\BackOfficeBundle\Service\FileUploader;
 
-use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Routing\Annotation\Route;
+
 
 /**
  * Product controller.
  *
- * @Route("admin/product")
  */
 class productController extends Controller
 {
     /**
      * Lists all product entities.
      *
-     * @Route("/", name="admin_product_index")
-     * @Method("GET")
      */
     public function indexAction()
     {
@@ -38,24 +35,21 @@ class productController extends Controller
     /**
      * Creates a new product entity.
      *
-     * @Route("/new", name="admin_product_new")
-     * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, FileUploader $fileUploader)
     {
         $product = new Product();
         $form = $this->createForm('Laviva\BackOfficeBundle\Form\productType', $product);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
 
-            $file = $product->getPhoto();
-            if ($file instanceof UploadedFile) { 
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
-            $file->move($this->getParameter('images_products_directory'), $fileName);
-            }
-            $product->setPhoto($fileName);
+            $file = $product->getImage();
+
+            $fileName = $fileUploader->upload($file);
+
+            $product->setImage($fileName);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($product);
             $em->flush();
@@ -72,8 +66,6 @@ class productController extends Controller
     /**
      * Finds and displays a product entity.
      *
-     * @Route("/{id}", name="admin_product_show")
-     * @Method("GET")
      */
     public function showAction(product $product)
     {
@@ -88,8 +80,6 @@ class productController extends Controller
     /**
      * Displays a form to edit an existing product entity.
      *
-     * @Route("/{id}/edit", name="admin_product_edit")
-     * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, product $product)
     {
@@ -113,8 +103,6 @@ class productController extends Controller
     /**
      * Deletes a product entity.
      *
-     * @Route("/{id}", name="admin_product_delete")
-     * @Method("DELETE")
      */
     public function deleteAction(Request $request, product $product)
     {

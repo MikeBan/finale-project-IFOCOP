@@ -47,7 +47,7 @@ class product
     /**
      * @var string
      *
-     * @ORM\Column(name="photo", type="string", length=255)
+     * @ORM\Column(name="image", type="string", length=255)
      * 
      * @Assert\NotBlank(message="Please, upload a picture.")
      * @Assert\File(
@@ -55,7 +55,7 @@ class product
      *      mimeTypes={ "image/png", "image/jpg", "image/jpeg"}
      * )
      */
-    private $photo;
+    private $image;
 
     /**
      * @var string
@@ -162,27 +162,27 @@ class product
     }
 
     /**
-     * Set photo.
+     * Set image.
      *
-     * @param string $photo
+     * @param string $image
      *
      * @return product
      */
-    public function setPhoto($photo)
+    public function setImage($image)
     {
-        $this->photo = $photo;
+        $this->image = $image;
 
         return $this;
     }
 
     /**
-     * Get photo.
+     * Get image.
      *
      * @return string
      */
-    public function getPhoto()
+    public function getImage()
     {
-        return $this->photo;
+        return $this->image;
     }
 
     /**
@@ -257,3 +257,6 @@ class product
         return $this->quantity;
     }
 }
+
+
+

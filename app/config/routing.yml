@@ -1,3 +1,7 @@
+laviva_main_user:
+    resource: "@LavivaMainBundle/Controller/UserController.php"
+    type:     annotation
+
 laviva_back_office_product:
     resource: "@LavivaBackOfficeBundle/Controller/productController.php"
     type:     annotation

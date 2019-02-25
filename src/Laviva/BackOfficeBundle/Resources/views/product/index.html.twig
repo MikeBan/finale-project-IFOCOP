@@ -1,6 +1,6 @@
-{% extends 'back-office.html.twig' %}
+{% extends 'admin-base.html.twig' %}
 
-{% block content %}
+{% block body %}
 
 
 <p>Products list</p>
@@ -50,7 +50,7 @@
                 <td>{{ product.idCategory }}</td>
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
-                <td><br> <img src="{{ asset('uploads/images products/' ~ product.photo ) }}" class="" alt="Responsive image"><a href="{{ asset('uploads/images products/' ~ product.photo ) }}" style="width:200px; height: 200px ">voir photo</a></td>
+                <td><br> <img src="{{ asset('Uploads/images products/' ~ product.image ) }}" class="" alt="Responsive image"><a href="{{ asset('uploads/images products/' ~ product.image ) }}" style="width:200px; height: 200px ">voir photo</a></td>
                 <td>{{ product.color }}</td>
                 <td>{{ product.price }}</td>
                 <td>{{ product.quantity }}</td>
